@@ -14,7 +14,7 @@ export default function NotFound() {
         <Image
          src={serverError} 
          alt="illustration"
-         className="w-full lg:w-[500px]"
+         className="w-full lg:w-125"
          width={500}
          height={500}
         />
