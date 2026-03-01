@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import serverError from "@/assets/images/ErrorServer.png";
+import Button from "@/components/ui/Button";
 
 export default function NotFound() {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function NotFound() {
         <h1 className="text-5xl font-bold">404 - Page Not Found</h1>
         <p className="mt-4">Sorry, we couldn&apos;t find the page you&apos;re looking for.</p>
         <div className="mt-6">
-          {/* <Button onClick={() => router.push('/')}>Go Home</Button> */}
+          <Button variant={5} onClick={() => router.push('/')}>Go Home</Button>
         </div>
       </div>
     </div>
