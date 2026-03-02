@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({
 
   //? Define Tailwind classes for each variant
   const variantStyles: Record<ButtonVariant, string> = {
-    1: "border border-[#4640DE] bg-[#4640DE]  text-[#fff] hover:bg-transparent hover:text-[#000] ",
+    1: "border border-[#4640DE] bg-[#4640DE]  text-[#fff] hover:bg-transparent hover:text-primary ",
     2: "border border-[#4640DE] hover:bg-[#4640DE] text-primary hover:text-[#fff] ",
     3: "dark:border-slate-800 dark:text-[#abc2d3] dark:bg-slate-800 dark:hover:bg-transparent dark:hover:text-[#abc2d3] border border-[#3e3939] bg-[#000000] text-[#fff] hover:bg-secondary hover:text-[#000] ",
     4: "border dark:border-slate-800 dark:text-[#abc2d3] dark:hover:bg-slate-800 border-[#3e3939] hover:bg-[#000000] text-[#000] hover:text-[#fff] ",
