@@ -2,7 +2,7 @@ import React from 'react';
 
 const Body = () => {
     return (
-        <div className='min-h-screen'>
+        <div className='min-h-[80vh]'>
             body here
         </div>
     );
