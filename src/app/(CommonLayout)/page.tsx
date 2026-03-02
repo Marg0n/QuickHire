@@ -10,7 +10,7 @@ export const metadata = {
 
 const LandingPage = () => {
     return (
-        <div className="">
+        <div className="z-50">
             <Navbar/>
             <Body/>
             <Footer/>

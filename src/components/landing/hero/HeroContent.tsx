@@ -70,7 +70,7 @@ const Left = () => {
 
       {/* pic */}
       <div className="hidden md:block absolute top-0 right-0 h-full z-[-1]">
-        <Image src={pic} width={632} height={400} alt="model picture" className="object-fit"/>
+        <Image src={pic} width={625} height={400} alt="model picture" className="object-fit"/>
       </div>
     </div>
   );
