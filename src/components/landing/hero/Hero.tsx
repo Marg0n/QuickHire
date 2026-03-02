@@ -1,11 +1,9 @@
-import Left from "./Left";
-import Right from "./Right";
+import HeroContent from "./HeroContent";
 
 const Hero = () => {
   return (
     <div className="h-[85vh] bg-gray-100">
-      <Left />
-      {/* <Right /> */}
+      <HeroContent />
     </div>
   );
 };
