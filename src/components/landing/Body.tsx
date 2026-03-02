@@ -2,7 +2,7 @@ import Hero from "./hero/Hero";
 
 const Body = () => {
   return (
-    <div className="min-h-[80vh]">
+    <div className="min-h-screen">
       <Hero />
     </div>
   );
