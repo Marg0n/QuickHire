@@ -23,7 +23,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <div className="flex items-center justify-between gap-6">
           <Link href="/">
-            <Image src={logo} alt="Quick Hire Logo" width={140} height={140} />
+            <Image src={logo} alt="Quick Hire Logo" width={152} height={36} />
           </Link>
 
           {/* Desktop Menu */}
