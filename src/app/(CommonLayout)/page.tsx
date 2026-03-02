@@ -1,3 +1,4 @@
+import Body from "@/components/landing/Body";
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 
@@ -11,7 +12,7 @@ const LandingPage = () => {
     return (
         <div className="">
             <Navbar/>
-            page here
+            <Body/>
             <Footer/>
         </div>
     );
