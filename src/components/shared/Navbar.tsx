@@ -18,7 +18,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 left-0 w-full z-50 backdrop-blur-md bg-white shadow-sm border-b border-white/10">
+    <header className="w-full z-50 bg-gray-100">
       {/* Nametag / logo */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <div className="flex items-center justify-between gap-6">
