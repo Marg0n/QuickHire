@@ -1,3 +1,4 @@
+import Navbar from "@/components/shared/Navbar";
 
 
 export const metadata = {
@@ -8,6 +9,7 @@ export const metadata = {
 const LandingPage = () => {
     return (
         <div className="">
+            <Navbar/>
             page here
         </div>
     );
