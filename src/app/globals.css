@@ -4,7 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  --primary: #4640DE;
+  --primary: #4640de;
 }
 
 @theme inline {
@@ -23,6 +23,23 @@
   :root {
     --background: #ededed;
     --foreground: #0a0a0a;
+  }
+}
+
+@layer utilities {
+  .clip-cta {
+    background-color: var(--color-primary);
+    clip-path: polygon(
+      20% 0%,
+      80% 0%,
+      100% 0,
+      100% 75%,
+      67% 100%,
+      0 100%,
+      0% 80%,
+      0% 20%
+    );
+    z-index: -10;
   }
 }
 
