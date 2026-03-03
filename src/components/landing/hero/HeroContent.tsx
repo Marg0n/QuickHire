@@ -8,7 +8,7 @@ import pic from "@/assets/images/Pic.png";
 const HeroContent = () => {
   return (
     <div
-      className="xl:py-24 py-14 lg:px-22 px-6 xl:px-32 bg-transparent w-full h-full relative z-50 space-y-4"
+      className="xl:py-24 py-14 lg:px-22 px-6 xl:px-30 bg-transparent w-full h-full relative z-50 space-y-4 "
       style={{
         backgroundImage: `url(${pattern.src})`,
         backgroundPosition: "right bottom",
@@ -31,8 +31,8 @@ const HeroContent = () => {
       </p>
 
       {/* inputs */}
-      <form className="bg-white p-3 xl:p-5 flex flex-col md:flex-row gap-6 md:gap-2 xl:gap-12 lg:w-140 xl:w-210 my-4 shadow-md ">
-        <div className="flex items-center justify-start gap-2 xl:gap-6 ">
+      <form className="bg-white p-3 xl:p-5 flex flex-col md:flex-row gap-6 md:gap-2 xl:gap-12 lg:w-148 xl:w-210 my-4 shadow-md ">
+        <div className="flex items-center justify-start gap-2 xl:gap-4 ">
           <span className="cursor-pointer">
             <IoSearch className="xl:text-3xl text-[1.38rem] group-hover:text-primary" />
           </span>
@@ -43,7 +43,7 @@ const HeroContent = () => {
           />
         </div>
 
-        <div className="flex items-center justify-start gap-2 xl:gap-6 ">
+        <div className="flex items-center justify-start gap-2 xl:gap-4 ">
           <span className="cursor-pointer">
             <IoLocationOutline className="text-[1.38rem] xl:text-3xl group-hover:text-primary" />
           </span>
@@ -72,7 +72,7 @@ const HeroContent = () => {
       </p>
 
       {/* pic */}
-      <div className="hidden lg:block absolute top-0 right-0 h-full z-[-1]">
+      <div className="hidden lg:block absolute top-0 right-[-40] h-full z-[-1]">
         <Image
           src={pic}
           // width={625}
@@ -80,7 +80,7 @@ const HeroContent = () => {
           alt="model picture"
           className="
             lg:w-[500px]          
-            xl:w-[625px]       
+            xl:w-[715px]       
             h-auto
           "
           priority
