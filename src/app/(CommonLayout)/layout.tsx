@@ -3,7 +3,7 @@ import React from "react";
 
 const CommonLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <section className="">
+    <section className="font-clash">
       
       <main className="">{children}</main>
       
