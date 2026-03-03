@@ -63,7 +63,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white/70 dark:bg-black/60 backdrop-blur-md p-4 space-y-4">
+        <div className="md:hidden bg-white/70 dark:bg-black/30 backdrop-blur-md p-4 space-y-4">
           {links.map((link) => (
             <Link
               key={link.href}
