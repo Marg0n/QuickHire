@@ -8,7 +8,7 @@ import pic from "@/assets/images/Pic.png";
 const HeroContent = () => {
   return (
     <div
-      className="xl:py-24 lg:py-14 lg:px-22 xl:px-32 bg-transparent w-full h-full relative z-50 space-y-4"
+      className="xl:py-24 py-14 lg:px-22 px-6 xl:px-32 bg-transparent w-full h-full relative z-50 space-y-4"
       style={{
         backgroundImage: `url(${pattern.src})`,
         backgroundPosition: "right bottom",
@@ -17,9 +17,9 @@ const HeroContent = () => {
         backgroundAttachment: "scroll",
       }}
     >
-      <div className="lg:w-86 xl:w-112 xl:h-76 text-start flex flex-col lg:gap-2 xl:gap-4 ">
+      <div className="w-86 xl:w-112 xl:h-76 text-start flex flex-col lg:gap-2 xl:gap-4 ">
         {/* static section */}
-        <h1 className="xl:text-7xl lg:text-5xl font-semibold font-clash xl:leading-20 lg:leading-14">
+        <h1 className="xl:text-7xl text-5xl font-semibold font-clash xl:leading-20 leading-14">
           Discover more than{" "}
           <span className="text-[#26A4FF]">5000+ Jobs</span>{" "}
         </h1>
@@ -31,19 +31,19 @@ const HeroContent = () => {
       </p>
 
       {/* inputs */}
-      <form className="bg-white lg:p-3 xl:p-5 flex flex-col md:flex-row lg:gap-2 xl:gap-12 lg:w-140 xl:w-210 my-4 shadow-md ">
-        <div className="flex items-center justify-start lg:gap-2 xl:gap-6 ">
+      <form className="bg-white p-3 xl:p-5 flex flex-col md:flex-row gap-6 md:gap-2 xl:gap-12 lg:w-140 xl:w-210 my-4 shadow-md ">
+        <div className="flex items-center justify-start gap-2 xl:gap-6 ">
           <span className="cursor-pointer">
             <IoSearch className="xl:text-3xl text-[1.38rem] group-hover:text-primary" />
           </span>
           <input
             type="text"
             placeholder="Job title or keyword"
-            className="border-b-1  border-slate-600 bg-transparent placeholder:text-gray-400 xl:p-3"
+            className="border-b-1  border-slate-600 bg-transparent placeholder:text-gray-400 xl:p-3 w-full md:w-auto"
           />
         </div>
 
-        <div className="flex items-center justify-start lg:gap-2 xl:gap-6 ">
+        <div className="flex items-center justify-start gap-2 xl:gap-6 ">
           <span className="cursor-pointer">
             <IoLocationOutline className="text-[1.38rem] xl:text-3xl group-hover:text-primary" />
           </span>
@@ -52,7 +52,7 @@ const HeroContent = () => {
             id="currency"
             name="currency"
             // placeholder="Florence, Italy"
-            className="border-b-1  border-slate-600 bg-transparent placeholder:text-gray-400 xl:p-3 xl:w-56"
+            className="border-b-1  border-slate-600 bg-transparent placeholder:text-gray-400 xl:p-3 w-full md:w-auto xl:w-56"
           >
             <option>Florence, Italy</option>
             <option>Dhaka, Bangladesh</option>
@@ -60,13 +60,13 @@ const HeroContent = () => {
           </select>
         </div>
 
-        <Button variant={1} className="xl:w-56 lg:text-xs xl:text-base">
+        <Button variant={1} className="xl:w-56 text-lg lg:text-xs xl:text-base">
           Search my job
         </Button>
       </form>
 
       {/* popular */}
-      <p className="xl:text-base lg:text-xs">
+      <p className="xl:text-base lg:text-xs flex flex-col md:flex-row">
         <span className="text-slate-600 ">Popular : </span>UI Designer, UX
         Researcher, Android, Admin
       </p>
