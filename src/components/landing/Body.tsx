@@ -1,6 +1,8 @@
 import Category from "./category/Category";
 import Company from "./company/Company";
+import Featured from "./featured/Featured";
 import Hero from "./hero/Hero";
+import CTA from "./newsletter/CTA";
 
 const Body = () => {
   return (
@@ -8,6 +10,8 @@ const Body = () => {
       <Hero />
       <Company/>
       <Category/>
+      <CTA />
+      <Featured/>
     </div>
   );
 };
