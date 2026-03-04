@@ -2,6 +2,7 @@ import Category from "./category/Category";
 import Company from "./company/Company";
 import Featured from "./featured/Featured";
 import Hero from "./hero/Hero";
+import Latest from "./latest/Latest";
 import CTA from "./newsletter/CTA";
 
 const Body = () => {
@@ -12,6 +13,7 @@ const Body = () => {
       <Category/>
       <CTA />
       <Featured/>
+      <Latest/>
     </div>
   );
 };
