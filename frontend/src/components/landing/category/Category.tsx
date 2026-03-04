@@ -15,7 +15,7 @@ const Category = () => {
 
         <Link
           href={"/showall"}
-          className="hidden md:block flex justify-between items-center gap-2 text-blue-700 text-semibold"
+          className="hidden md:block md:flex justify-between items-center gap-2 text-blue-700 text-semibold"
         >
           Show all jobs
           <FaArrowRight />
@@ -67,12 +67,12 @@ const Category = () => {
       </div>
 
       <Link
-          href={"/showall"}
-          className=" md:hidden flex justify-start items-center gap-2 text-blue-700 font-semibold"
-        >
-          Show all jobs
-          <FaArrowRight />
-        </Link>
+        href={"/showall"}
+        className=" md:hidden flex justify-start items-center gap-2 text-blue-700 font-semibold"
+      >
+        Show all jobs
+        <FaArrowRight />
+      </Link>
     </div>
   );
 };
