@@ -24,78 +24,19 @@ const Featured = () => {
 
       {/* content */}
       <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 my-12">
-        <FeaturedBox
-          icon={<FaDropbox />}
-          type="Full Time"
-          title="Design"
-          platform="Dropbox"
-          address="San Fransisco, US"
-          tags={['Design', 'Business']}
-          description="Dropbox is looking for Brand Designer to help the team to create a new brand identity for the company."
-        />
-        <FeaturedBox
-          icon={<FaDropbox />}
-          type="Full Time"
-          title="Design"
-          platform="Dropbox"
-          address="San Fransisco, US"
-          tags={['Design', 'Business']}
-          description="Dropbox is looking for Brand Designer to help the team to create a new brand identity for the company."
-        />
-        <FeaturedBox
-          icon={<FaDropbox />}
-          type="Full Time"
-          title="Design"
-          platform="Dropbox"
-          address="San Fransisco, US"
-          tags={['Design', 'Business']}
-          description="Dropbox is looking for Brand Designer to help the team to create a new brand identity for the company."
-        />
-        <FeaturedBox
-          icon={<FaDropbox />}
-          type="Full Time"
-          title="Design"
-          platform="Dropbox"
-          address="San Fransisco, US"
-          tags={['Design', 'Business']}
-          description="Dropbox is looking for Brand Designer to help the team to create a new brand identity for the company."
-        />
-        <FeaturedBox
-          icon={<FaDropbox />}
-          type="Full Time"
-          title="Design"
-          platform="Dropbox"
-          address="San Fransisco, US"
-          tags={['Design', 'Business']}
-          description="Dropbox is looking for Brand Designer to help the team to create a new brand identity for the company."
-        />
-        <FeaturedBox
-          icon={<FaDropbox />}
-          type="Full Time"
-          title="Design"
-          platform="Dropbox"
-          address="San Fransisco, US"
-          tags={['Design', 'Business']}
-          description="Dropbox is looking for Brand Designer to help the team to create a new brand identity for the company."
-        />
-        <FeaturedBox
-          icon={<FaDropbox />}
-          type="Full Time"
-          title="Design"
-          platform="Dropbox"
-          address="San Fransisco, US"
-          tags={['Design', 'Business']}
-          description="Dropbox is looking for Brand Designer to help the team to create a new brand identity for the company."
-        />
-        <FeaturedBox
-          icon={<FaDropbox />}
-          type="Full Time"
-          title="Design"
-          platform="Dropbox"
-          address="San Fransisco, US"
-          tags={['Design', 'Business']}
-          description="Dropbox is looking for Brand Designer to help the team to create a new brand identity for the company."
-        />
+        {[...Array(8)].map((_, i) => (
+          <div key={i} >
+            <FeaturedBox
+              icon={<FaDropbox />}
+              type="Full Time"
+              title="Design"
+              platform="Dropbox"
+              address="San Fransisco, US"
+              tags={["Design", "Business"]}
+              description="Dropbox is looking for Brand Designer to help the team to create a new brand identity for the company."
+            />
+          </div>
+        ))}
       </div>
 
       <Link

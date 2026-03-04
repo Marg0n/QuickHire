@@ -14,7 +14,7 @@ const FeaturedBox = ({
   return (
     <div
       className={`
-                border border-primary p-6 rounded-lg transition hover:shadow-md 
+                border border-primary p-4 rounded-lg transition hover:shadow-md 
                 hover:bg-primary group
                 flex flex-col gap-6 md:gap-2
                 items-start justify-center
