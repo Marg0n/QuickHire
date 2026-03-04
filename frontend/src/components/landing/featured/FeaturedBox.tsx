@@ -1,17 +1,5 @@
-import { ReactNode } from "react";
-import { FaArrowRight } from "react-icons/fa";
+import { CardBoxProps } from "@/types/types";
 
-//? type
-type FeaturedBoxProps = {
-  icon: ReactNode;
-  type: string;
-  title: string;
-  platform: string;
-  address: string;
-  description: string;
-  tags: string[];
-  className?: string;
-};
 
 const FeaturedBox = ({
   icon,
@@ -22,7 +10,7 @@ const FeaturedBox = ({
   tags,
   description,
   className,
-}: FeaturedBoxProps) => {
+}: CardBoxProps) => {
   return (
     <div
       className={`
@@ -55,16 +43,16 @@ const FeaturedBox = ({
 
         {/* description */}
         <p className=" text-gray-600 group-hover:text-white ">
-          {description.slice(0, 50)} ...
+          {description?.slice(0, 50)} ...
         </p>
 
         <div className="space-x-2">
-          {tags.map((tag, index) => (
+          {tags?.map((tag, index) => (
             <span
               key={index}
               className="text-xs border rounded-2xl px-2 py-1 border-amber-500 bg-amber-300 "
             >
-              {tags.length - 1 === index ? tag : `${tag}`}
+              {tags?.length - 1 === index ? tag : `${tag}`}
             </span>
           ))}
         </div>

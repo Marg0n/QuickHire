@@ -1,19 +1,13 @@
-import { ReactNode } from "react";
+import { CardBoxProps } from "@/types/types";
 import { FaArrowRight } from "react-icons/fa";
 
-type CategoryBoxProps = {
-  icon: ReactNode;
-  title: string;
-  description: string;
-  className?: string;
-};
 
 const CategoryBox = ({
   icon,
   title,
   description,
   className,
-}: CategoryBoxProps) => {
+}: CardBoxProps) => {
   return (
     <div
       className={`
