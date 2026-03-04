@@ -16,8 +16,8 @@ const FeaturedBox = ({
       className={`
                 border border-primary p-6 rounded-lg transition hover:shadow-md 
                 hover:bg-primary group
-                flex flex-row md:flex-col gap-6 md:gap-2
-                md:items-start md:justify-center items-center justify-start
+                flex flex-col gap-6 md:gap-2
+                items-start justify-center
                 ${className ?? ""}
                 `}
     >
@@ -35,7 +35,7 @@ const FeaturedBox = ({
           </h3>
 
           {/* platform */}
-          <p className="flex items-center gap-2 text-gray-600 group-hover:text-white ">
+          <p className="flex items-center gap-2 text-gray-600 font-semibold group-hover:text-white ">
             {platform} · {address}
           </p>
         </div>
@@ -46,7 +46,7 @@ const FeaturedBox = ({
           {description?.slice(0, 50)} ...
         </p>
 
-        <div className="space-x-2">
+        <div className="space-x-2 flex flex-wrap">
           {tags?.map((tag, index) => (
             <span
               key={index}

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import { FaArrowRight, FaDropbox } from "react-icons/fa";
 import LatestBox from "./LatestBox";
 
