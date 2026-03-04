@@ -22,31 +22,18 @@ const Latest = () => {
 
       {/* content */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 my-12">
-        <LatestBox
-          icon={<FaDropbox />}
-          type="Full-Time"
-          title="Brand Designer"
-          platform="Dropbox"
-          address="San Fransisco, US"
-          tags={["Design", "Marketing"]}
-        />
-        <LatestBox
-          icon={<FaDropbox />}
-          type="Full-Time"
-          title="Brand Designer"
-          platform="Dropbox"
-          address="San Fransisco, US"
-          tags={["Design", "Marketing"]}
-        />
-        <LatestBox
-          icon={<FaDropbox />}
-          type="Full-Time"
-          title="Brand Designer"
-          platform="Dropbox"
-          address="San Fransisco, US"
-          tags={["Design", "Marketing"]}
-        />
-        
+        {[...Array(8)].map((_, i) => (
+          <div key={i}>
+            <LatestBox
+              icon={<FaDropbox />}
+              type="Full-Time"
+              title="Brand Designer"
+              platform="Dropbox"
+              address="San Fransisco, US"
+              tags={["Design", "Marketing"]}
+            />
+          </div>
+        ))}
       </div>
 
       <Link

@@ -23,47 +23,16 @@ const Category = () => {
       </div>
 
       {/* content */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 my-12">
-        <CategoryBox
-          icon={<LuPencilRuler />}
-          title="Design"
-          description="235 jobs available"
-        />
-        <CategoryBox
-          icon={<LuPencilRuler />}
-          title="Design"
-          description="235 jobs available"
-        />
-        <CategoryBox
-          icon={<LuPencilRuler />}
-          title="Design"
-          description="235 jobs available"
-        />
-        <CategoryBox
-          icon={<LuPencilRuler />}
-          title="Design"
-          description="235 jobs available"
-        />
-        <CategoryBox
-          icon={<LuPencilRuler />}
-          title="Design"
-          description="235 jobs available"
-        />
-        <CategoryBox
-          icon={<LuPencilRuler />}
-          title="Design"
-          description="235 jobs available"
-        />
-        <CategoryBox
-          icon={<LuPencilRuler />}
-          title="Design"
-          description="235 jobs available"
-        />
-        <CategoryBox
-          icon={<LuPencilRuler />}
-          title="Design"
-          description="235 jobs available"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 my-6">
+        {[...Array(8)].map((_, i) => (
+          <div key={i}>
+            <CategoryBox
+              icon={<LuPencilRuler />}
+              title="Design"
+              description="235 jobs available"
+            />
+          </div>
+        ))}
       </div>
 
       <Link
