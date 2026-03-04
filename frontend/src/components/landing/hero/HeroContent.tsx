@@ -80,8 +80,8 @@ const HeroContent = () => {
           alt="model picture"
           className="
             lg:w-[500px]          
-            xl:w-[715px]       
-            h-auto
+            xl:w-[625px]       
+            h-[75vh]
           "
           priority
         />

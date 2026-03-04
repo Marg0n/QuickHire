@@ -1,10 +1,20 @@
 import Link from "next/link";
 import { FaArrowRight, FaDropbox } from "react-icons/fa";
 import LatestBox from "./LatestBox";
+import pattern from "@/assets/images/Pattern.png";
 
 const Latest = () => {
   return (
-    <div className="xl:py-24 py-14 lg:px-22 px-6 xl:px-32 bg-transparent w-full h-full">
+    <div
+      className="py-14 lg:px-22 px-6 xl:px-32 bg-slate-100 opacity-90 w-full h-full latest"
+      style={{
+        backgroundImage: `url(${pattern.src})`,
+        backgroundPosition: "right bottom",
+        backgroundSize: "initial",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "scroll",
+      }}
+    >
       {/* title */}
       <div className="flex justify-between items-center">
         <h1 className="text-4xl font-bold">
