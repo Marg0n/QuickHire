@@ -41,17 +41,19 @@ const userSchema = new Schema<IUser>({
     versionKey: false
 });
 
-// Middleware to update 'updatedAt' field before updating a document 
-userSchema.pre('save', async function (next) {
+//? Middleware 
+userSchema.pre('save', async function () {
   const user = this;
 
-  //* hashing password and save into DB
+  //? Skip hashing if not changed
+  if (!user.isModified('password')) return;
+
+  //? hashing password and save into DB
   user.password = await bcrypt.hash(
     user.password,
     Number(config.bcrypt_salt_rounds),
   );
 
-  next();
 });
 
 const User = model<IUser>("User", userSchema);
