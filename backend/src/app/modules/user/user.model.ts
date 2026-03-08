@@ -21,7 +21,8 @@ const userSchema = new Schema<IUser>({
     password: {
         type: String,
         trim: true,
-        required: [true, 'Please provide a password.']
+        required: [true, 'Please provide a password.'],
+        select: false
     },
     role: {
         type: String,
