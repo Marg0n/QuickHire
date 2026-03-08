@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 import config from "../../config/index.js";
 
 
+//? Schema for User collection
 const userSchema = new Schema<IUser>({
     name: {
         type: String,
@@ -42,7 +43,7 @@ const userSchema = new Schema<IUser>({
     versionKey: false
 });
 
-//? Middleware 
+//? Middleware for hashing the password before inserting into DB
 userSchema.pre('save', async function () {
   const user = this;
 
@@ -57,6 +58,7 @@ userSchema.pre('save', async function () {
 
 });
 
+//? Model for User collection
 const User = model<IUser>("User", userSchema);
 
 export default User;
