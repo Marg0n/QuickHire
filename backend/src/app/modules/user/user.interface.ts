@@ -1,12 +1,12 @@
-import mongoose from "mongoose";
+import { Types } from "mongoose";
 
 export interface IUser{
-    _id?: mongoose.Schema.Types.ObjectId;
+    _id?: Types.ObjectId;
     name: string;
     email: string;
     password: string;
     role: "admin" | "user";
-    isBlocked: boolean;
+    isBlocked?: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }
