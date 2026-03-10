@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
 
-export interface IUser{
+export interface IApplicationUser{
     _id?: Types.ObjectId;
     job_id?: Types.ObjectId;
     name: string;
