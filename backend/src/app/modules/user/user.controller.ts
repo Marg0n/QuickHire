@@ -1,11 +1,11 @@
-import catchAsync from "../../utils/catchAsync.js";
-import { sendResponse } from "../../utils/sendResponse.js";
+import catchAsync from '../../utils/catchAsync.js';
+import { sendResponse } from '../../utils/sendResponse.js';
 import httpStatus from 'http-status';
-import { UserServices } from "./user.service.js";
+import { UserServices } from './user.service.js';
 
 const createAdmin = catchAsync(async (req, res) => {
   const payload = req.body;
-  const result = await UserServices.createAdmin(payload);
+  const result = await UserServices.createUser(payload);
 
   sendResponse.sendCreateDataResponse(res, {
     statusCode: httpStatus.OK,
@@ -15,6 +15,60 @@ const createAdmin = catchAsync(async (req, res) => {
   });
 });
 
+const getAllUser = catchAsync(async (req, res) => {
+  const result = await UserServices.getAllUser();
+
+  sendResponse.sendDataResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Users getting successfully',
+    data: result,
+  });
+});
+
+const getSingleUser = catchAsync(async (req, res) => {
+  // console.log(req.params)
+  const userId = req.params.userId;
+
+  const result = await UserServices.getSingleUser(userId as string);
+
+  sendResponse.sendDataResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User getting successfully',
+    data: result,
+  });
+});
+
+const updateUser = catchAsync(async (req, res) => {
+  const userId = req.params.userId;
+  const body = req.body;
+  const result = await UserServices.updateUser(userId as string, body);
+
+  sendResponse.sendDataResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User updated successfully',
+    data: result,
+  });
+});
+
+const deleteUser = catchAsync(async (req, res) => {
+  const userId = req.params.userId;
+  await UserServices.deleteUser(userId as string);
+
+  sendResponse.sendUpdateResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'user deleted successfully',
+    data: {},
+  });
+});
+
 export const UserControllers = {
   createAdmin,
+  getAllUser,
+  getSingleUser,
+  updateUser,
+  deleteUser,
 };
