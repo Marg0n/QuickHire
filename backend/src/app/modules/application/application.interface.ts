@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
+import { Types } from "mongoose";
 
 export interface IUser{
-    _id?: mongoose.Schema.Types.ObjectId;
-    job_id?: mongoose.Schema.Types.ObjectId;
+    _id?: Types.ObjectId;
+    job_id?: Types.ObjectId;
     name: string;
     email: string;
     resume_link: string;
