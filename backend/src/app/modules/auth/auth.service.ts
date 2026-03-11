@@ -48,6 +48,7 @@ const login = async (payload: ILoginUser) => {
   );
 
   //* exclude the password field from the response
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { password, ...verifiedUser } = user.toObject();
 
   const result = {

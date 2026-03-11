@@ -1,11 +1,11 @@
-import { Schema, model } from "mongoose";
-import type { IApplicationUser } from "./application.interface.js";
+import { Schema, model } from 'mongoose';
+import type { IApplicationUser } from './application.interface.js';
 
 const applicationSchema = new Schema<IApplicationUser>(
   {
     job_id: {
       type: Schema.Types.ObjectId,
-      ref: 'Job', 
+      ref: 'Job',
       required: [true, 'Job ID is required'],
     },
     name: {
@@ -29,9 +29,12 @@ const applicationSchema = new Schema<IApplicationUser>(
     },
   },
   {
-    timestamps: true, 
+    timestamps: true,
     versionKey: false,
-  }
+  },
 );
 
-export const Application = model<IApplicationUser>("Application", applicationSchema);
+export const Application = model<IApplicationUser>(
+  'Application',
+  applicationSchema,
+);

@@ -20,10 +20,7 @@ router.post(
   UserControllers.createAdmin,
 );
 
-router.get(
-  '/:userId',
-  UserControllers.getSingleUser,
-);
+router.get('/:userId', UserControllers.getSingleUser);
 
 router.put('/:userId', UserControllers.updateUser);
 

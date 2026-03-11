@@ -1,6 +1,6 @@
-import AppError from "../../errors/AppError.js";
-import type { IUser } from "./user.interface.js";
-import User from "./user.model.js";
+import AppError from '../../errors/AppError.js';
+import type { IUser } from './user.interface.js';
+import User from './user.model.js';
 import httpStatus from 'http-status';
 
 const checkIfUserExists = async (email: string) => {

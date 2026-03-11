@@ -1,6 +1,5 @@
-import { Schema, model } from "mongoose";
-import type { IJob } from "./job.interface.js";
-
+import { Schema, model } from 'mongoose';
+import type { IJob } from './job.interface.js';
 
 const jobSchema = new Schema<IJob>(
   {
@@ -21,7 +20,7 @@ const jobSchema = new Schema<IJob>(
     category: {
       type: String,
       enum: {
-        values: ["admin", "user"],
+        values: ['admin', 'user'],
         message: '{VALUE} is not a valid category',
       },
       required: [true, 'Category is required'],
@@ -35,8 +34,8 @@ const jobSchema = new Schema<IJob>(
     timestamps: true,
     versionKey: false,
     toJSON: { virtuals: true },
-    toObject: { virtuals: true }
-  }
+    toObject: { virtuals: true },
+  },
 );
 
 //* relation to job
@@ -46,5 +45,4 @@ jobSchema.virtual('applications', {
   foreignField: 'job_id',
 });
 
-
-export const Job = model<IJob>("Job", jobSchema);
+export const Job = model<IJob>('Job', jobSchema);

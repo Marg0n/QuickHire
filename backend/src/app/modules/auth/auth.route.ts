@@ -4,7 +4,7 @@ import { userValidations } from '../user/user.validation.js';
 import { authController } from './auth.controller.js';
 import { authValidation } from './auth.validation.js';
 
-const router = express.Router()
+const router = express.Router();
 
 router.post(
   '/register',

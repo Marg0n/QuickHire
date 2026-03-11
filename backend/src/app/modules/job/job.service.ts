@@ -1,5 +1,5 @@
-import type { IJob } from "./job.interface.js";
-import { Job } from "./job.model.js";
+import type { IJob } from './job.interface.js';
+import { Job } from './job.model.js';
 
 //* get all jobs
 const getAllJobs = async () => {
@@ -26,8 +26,8 @@ const deleteJobFromDB = async (id: string) => {
 };
 
 export const jobServices = {
-    getAllJobs,
-    getSingleJob,
-    createJobIntoDB,
-    deleteJobFromDB,
-}
+  getAllJobs,
+  getSingleJob,
+  createJobIntoDB,
+  deleteJobFromDB,
+};

@@ -11,8 +11,8 @@
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "target": "esnext",
-    // "target": "ES2022",
+    // "target": "esnext",
+    "target": "ES2022",
     "types": ["node"],
     
     //* For nodejs:
@@ -22,8 +22,8 @@
 
     //* Other Outputs
     "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
+    // "declaration": true,
+    // "declarationMap": true,
 
     //* Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
@@ -45,6 +45,9 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+
+    //* Very useful when deploying to Linux servers
+    "forceConsistentCasingInFileNames": true,
+  },
 }

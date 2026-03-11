@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
 import jwt, { type JwtPayload } from 'jsonwebtoken';
@@ -8,10 +9,9 @@ import type { TUserRole } from '../modules/user/user.interface.js';
 
 const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-
-    // const token = req.headers.authorization;
-    const token = req.headers.authorization?.split(' ')[1];
-    const secret = config.jwt_secret;
+    const token = req.headers.authorization;
+    // const token = req.headers.authorization?.split(' ')[1];
+    // const secret = config.jwt_secret;
 
     //? token check
     if (!token) {
@@ -19,14 +19,12 @@ const auth = (...requiredRoles: TUserRole[]) => {
     }
 
     //? validity check
-    let decoded : any; 
+    let decoded: any;
     try {
-      decoded = jwt.verify(
-        token,
-        config.jwt_secret as string,
-      ) as JwtPayload;
-    } catch (err) {
-      throw new AppError(httpStatus.UNAUTHORIZED, 'UNAUTHORIZED');
+      decoded = jwt.verify(token, config.jwt_secret as string) as JwtPayload;
+    } catch (err: any) {
+      console.log('err', err);
+      throw new AppError(httpStatus.UNAUTHORIZED, `UNAUTHORIZED: ${err}`);
     }
 
     const { role } = decoded;
@@ -35,7 +33,7 @@ const auth = (...requiredRoles: TUserRole[]) => {
     if (requiredRoles.length && !requiredRoles.includes(role)) {
       throw new AppError(
         httpStatus.FORBIDDEN,
-        'You have no permission to access this route'
+        'You have no permission to access this route',
       );
     }
 

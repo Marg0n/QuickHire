@@ -1,7 +1,7 @@
-import type { Request, Response } from "express";
-import catchAsync from "../../utils/catchAsync.js";
-import { sendResponse } from "../../utils/sendResponse.js";
-import { jobServices } from "./job.service.js";
+import type { Request, Response } from 'express';
+import catchAsync from '../../utils/catchAsync.js';
+import { sendResponse } from '../../utils/sendResponse.js';
+import { jobServices } from './job.service.js';
 import httpStatus from 'http-status';
 
 //* Get All Jobs
@@ -64,8 +64,8 @@ const deleteJob = catchAsync(async (req: Request, res: Response) => {
 });
 
 export const JobControllers = {
-    deleteJob,
-    getAllJobs,
-    createJob,
-    getSingleJob,
-}
+  deleteJob,
+  getAllJobs,
+  createJob,
+  getSingleJob,
+};
