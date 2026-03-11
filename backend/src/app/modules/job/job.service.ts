@@ -9,7 +9,7 @@ const getAllJobs = async () => {
 
 //* Get a single job
 const getSingleJob = async (id: string) => {
-  const result = await Job.findById(id);
+  const result = await Job.findById(id).populate('applications');
   return result;
 };
 
