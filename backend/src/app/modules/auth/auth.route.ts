@@ -11,11 +11,17 @@ const router = express.Router();
 router.post(
   '/register',
   validateRequest(userValidations.userValidationSchema),
+  () => {
+    console.log('registered in path');
+  },
   authController.register,
 );
 router.post(
   '/login',
   validateRequest(authValidation.loginValidationSchema),
+  () => {
+    console.log('login path');
+  },
   authController.login,
 );
 router.post(

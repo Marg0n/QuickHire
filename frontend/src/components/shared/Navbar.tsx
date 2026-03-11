@@ -90,7 +90,7 @@ export default function Navbar() {
               <Link href={"login"}>
                 <Button variant={2}>Login</Button>
               </Link>
-              <Link href={"signup"}>
+              <Link href={"register"}>
                 <Button variant={1}>Sign Up</Button>
               </Link>
             </>
@@ -148,7 +148,7 @@ export default function Navbar() {
                 </Button>
               </Link>
               <Link
-                href={"signup"}
+                href={"register"}
                 className="block text-lg font-medium text-gray-900 dark:text-gray-100"
               >
                 <Button variant={1} className="w-full">
