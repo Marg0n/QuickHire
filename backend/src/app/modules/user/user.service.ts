@@ -16,7 +16,7 @@ const checkIfUserExists = async (email: string) => {
 const createUser = async (payload: IUser): Promise<IUser> => {
   await checkIfUserExists(payload.email);
   console.log('payload', payload);
-  payload.role = 'admin';
+  // payload.role = 'admin';
   const result = await User.create(payload);
 
   return result;
