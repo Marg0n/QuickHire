@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
+import { Types } from "mongoose";
 
 export interface IJob{
-    _id?: mongoose.Schema.Types.ObjectId;
+    _id?: Types.ObjectId;
     title: string;
     company: string;
     location: string;
