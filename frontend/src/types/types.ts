@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode } from "react";
 
 //? type
@@ -10,4 +11,13 @@ export type CardBoxProps = {
   description?: string;
   tags?: string[];
   className?: string;
+};
+
+export type CustomFormFieldProps = {
+  label: string;
+  name: string;
+  type?: string;
+  register: any;
+  error?: any;
+  children?: React.ReactNode;
 };
