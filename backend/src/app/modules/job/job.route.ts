@@ -9,11 +9,7 @@ router.get('/', JobControllers.getAllJobs);
 
 router.get('/:id', JobControllers.getSingleJob);
 
-router.post(
-  '/',
-  // auth(USER_ROLE.admin),
-  JobControllers.createJob,
-);
+router.post('/', auth(USER_ROLE.admin), JobControllers.createJob);
 
 router.delete('/:userId', auth(USER_ROLE.admin), JobControllers.deleteJob);
 
