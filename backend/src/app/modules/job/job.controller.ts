@@ -63,6 +63,9 @@ const deleteJob = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-export const JobController = {
+export const JobControllers = {
     deleteJob,
+    getAllJobs,
+    createJob,
+    getSingleJob,
 }
