@@ -2,8 +2,9 @@ import catchAsync from '../../utils/catchAsync.js';
 import { sendResponse } from '../../utils/sendResponse.js';
 import httpStatus from 'http-status';
 import { UserServices } from './user.service.js';
+import type { Request, Response } from 'express';
 
-const createAdmin = catchAsync(async (req, res) => {
+const createAdmin = catchAsync(async (req: Request, res: Response) => {
   const payload = req.body;
   const result = await UserServices.createUser(payload);
 
@@ -15,7 +16,7 @@ const createAdmin = catchAsync(async (req, res) => {
   });
 });
 
-const getAllUser = catchAsync(async (req, res) => {
+const getAllUser = catchAsync(async (req: Request, res: Response) => {
   const result = await UserServices.getAllUser();
 
   sendResponse.sendDataResponse(res, {
@@ -26,7 +27,7 @@ const getAllUser = catchAsync(async (req, res) => {
   });
 });
 
-const getSingleUser = catchAsync(async (req, res) => {
+const getSingleUser = catchAsync(async (req: Request, res: Response) => {
   // console.log(req.params)
   const userId = req.params.userId;
 
@@ -40,7 +41,7 @@ const getSingleUser = catchAsync(async (req, res) => {
   });
 });
 
-const updateUser = catchAsync(async (req, res) => {
+const updateUser = catchAsync(async (req: Request, res: Response) => {
   const userId = req.params.userId;
   const body = req.body;
   const result = await UserServices.updateUser(userId as string, body);
@@ -53,7 +54,7 @@ const updateUser = catchAsync(async (req, res) => {
   });
 });
 
-const deleteUser = catchAsync(async (req, res) => {
+const deleteUser = catchAsync(async (req: Request, res: Response) => {
   const userId = req.params.userId;
   await UserServices.deleteUser(userId as string);
 
