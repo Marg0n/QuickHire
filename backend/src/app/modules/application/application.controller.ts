@@ -15,6 +15,6 @@ const createApplication = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-export const ApplicationController = {
+export const ApplicationControllers = {
   createApplication,
 };
