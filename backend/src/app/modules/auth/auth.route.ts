@@ -3,6 +3,8 @@ import validateRequest from '../../middleware/validateRequest.js';
 import { userValidations } from '../user/user.validation.js';
 import { authController } from './auth.controller.js';
 import { authValidation } from './auth.validation.js';
+import auth from '../../middleware/auth.js';
+import { USER_ROLE } from '../user/user.constant.js';
 
 const router = express.Router();
 
@@ -24,6 +26,7 @@ router.post(
 
 router.put(
   '/change-password',
+  auth(USER_ROLE.admin, USER_ROLE.user),
   validateRequest(authValidation.changePasswordValidationSchema),
   authController.changePassword,
 );

@@ -5,7 +5,7 @@ export interface IJob {
   title: string;
   company: string;
   location: string;
-  category: 'admin' | 'user';
+  category: 'Full Time' | 'Part Time' | 'Contractual';
   description: string;
   createdAt?: Date;
   updatedAt?: Date;

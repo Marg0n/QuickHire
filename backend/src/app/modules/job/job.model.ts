@@ -20,7 +20,7 @@ const jobSchema = new Schema<IJob>(
     category: {
       type: String,
       enum: {
-        values: ['admin', 'user'],
+        values: ['Full Time', 'Part Time', 'Contractual'],
         message: '{VALUE} is not a valid category',
       },
       required: [true, 'Category is required'],
