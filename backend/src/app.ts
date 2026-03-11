@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Application, NextFunction, Request, Response } from 'express';
 import express from 'express';
 import cors from 'cors';
@@ -35,6 +36,7 @@ app.get('/', (req: Request, res: Response) => {
 //* Routes
 app.use('/api/v1', router);
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   res.status(500).send({
     success: false,
