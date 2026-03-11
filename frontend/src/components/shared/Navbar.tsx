@@ -1,12 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { LuMenu, LuX } from "react-icons/lu";
+import { useEffect, useState } from "react";
+import { LuLayoutDashboard, LuLogOut, LuMenu, LuX } from "react-icons/lu";
 import logo from "@/assets/images/Logo.png";
 import Image from "next/image";
 import Button from "../ui/Button";
+import { useRouter } from "next/navigation";
+import { getCurrentUser, logout } from "@/services/AuthService";
+import { toast } from "react-toastify";
 
 const links = [
   { name: "Find Jobs", href: "/jobs" },
@@ -16,6 +20,26 @@ const links = [
 export default function Navbar() {
   //* mobile menu state
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const router = useRouter();
+  const [user, setUser] = useState<any>(null);
+
+  //*১. fetch from Server Cookie
+  useEffect(() => {
+    const fetchUser = async () => {
+      const currentUser = await getCurrentUser();
+      setUser(currentUser);
+    };
+    fetchUser();
+  }, []);
+
+  const handleLogout = async () => {
+    await logout(); // Server Action কল করে কুকি ডিলিট করা
+    setUser(null);
+    toast.success("Logged out successfully");
+    router.push("/login");
+    router.refresh();
+  };
 
   return (
     <header className="w-full z-50 bg-gray-100">
@@ -42,12 +66,35 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex justify-between items-center gap-6">
-          <Link href={"login"}>
-            <Button variant={2}>Login</Button>
-          </Link>
-          <Link href={"signup"}>
-            <Button variant={1}>Sign Up</Button>
-          </Link>
+          {user ? (
+            //? if login
+            <>
+              <Link href="/dashboard" title="Go to Dashboard">
+                <LuLayoutDashboard
+                  size={24}
+                  className="text-gray-600 hover:text-[#4F46E5] transition"
+                />
+              </Link>
+
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-1 text-red-500 hover:text-red-700 font-medium"
+              >
+                <LuLogOut size={22} />
+                <span className="hidden sm:inline">Logout</span>
+              </button>
+            </>
+          ) : (
+            //? not Login/Signup
+            <>
+              <Link href={"login"}>
+                <Button variant={2}>Login</Button>
+              </Link>
+              <Link href={"signup"}>
+                <Button variant={1}>Sign Up</Button>
+              </Link>
+            </>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -74,12 +121,42 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Link href={"login"} className="block text-lg font-medium text-gray-900 dark:text-gray-100">
-            <Button variant={2} className="w-full">Login</Button>
-          </Link>
-          <Link href={"signup"} className="block text-lg font-medium text-gray-900 dark:text-gray-100">
-            <Button variant={1} className="w-full">Sign Up</Button>
-          </Link>
+          {user ? (
+            //? if login
+            <>
+              <Link href="/dashboard" title="Go to Dashboard"
+                className="block text-lg font-medium text-gray-900 dark:text-gray-100">                
+                Dashboard
+              </Link>
+
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-1 text-red-500 hover:text-red-700 font-medium"
+              >
+                <LuLogOut size={22} />
+                <span className="">Logout</span>
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                href={"login"}
+                className="block text-lg font-medium text-gray-900 dark:text-gray-100"
+              >
+                <Button variant={2} className="w-full">
+                  Login
+                </Button>
+              </Link>
+              <Link
+                href={"signup"}
+                className="block text-lg font-medium text-gray-900 dark:text-gray-100"
+              >
+                <Button variant={1} className="w-full">
+                  Sign Up
+                </Button>
+              </Link>
+            </>
+          )}
         </div>
       )}
     </header>

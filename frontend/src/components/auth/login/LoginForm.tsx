@@ -27,8 +27,6 @@ export default function LoginForm() {
   //* toggle password
   const [showPassword, setShowPassword] = useState(false);
 
-  const [reCaptchaStatus, setReCaptchaStatus] = useState(false);
-
   const searchParams = useSearchParams();
   const redirect = searchParams.get("redirectPath");
   // const router = useRouter();
@@ -39,23 +37,7 @@ export default function LoginForm() {
     formState: { errors, isSubmitting },
   } = form;
 
-  const handleReCaptcha = async (value: string | null) => {
-    try {
-      const res = await reCaptchaTokenVerification(value!);
-      if (res?.success) {
-        setReCaptchaStatus(true);
-      }
-    } catch (err: any) {
-      console.error(err);
-    }
-  };
-
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    // reCaptchaStatus check
-    if (!reCaptchaStatus) {
-      toast.error("Please complete the reCAPTCHA first.");
-      return; // Block submission
-    }
 
     try {
       const res = await loginUser(data);
