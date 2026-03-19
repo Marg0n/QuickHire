@@ -1,4 +1,5 @@
-import Dashboard from "@/components/dashboard/dashboard";
+import Dashboard from "@/components/dashboard/Dashboard";
+
 
 export const metadata = {
   title: "Quick Hire Dashboard",

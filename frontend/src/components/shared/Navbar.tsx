@@ -69,7 +69,7 @@ export default function Navbar() {
           {user ? (
             //? if login
             <>
-              <Link href="/dashboard" title="Go to Dashboard">
+              <Link href={`/dashboard/${user?.userData?.role}`} title="Go to Dashboard">
                 <LuLayoutDashboard
                   size={24}
                   className="text-gray-600 hover:text-[#4F46E5] transition"
@@ -124,7 +124,7 @@ export default function Navbar() {
           {user ? (
             //? if login
             <>
-              <Link href="/dashboard" title="Go to Dashboard"
+              <Link href={`/dashboard/${user?.userData?.role}`} title="Go to Dashboard"
                 className="block text-lg font-medium text-gray-900 dark:text-gray-100">                
                 Dashboard
               </Link>
