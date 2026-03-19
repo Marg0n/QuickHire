@@ -24,7 +24,7 @@ export default function Navbar() {
   const router = useRouter();
   const [user, setUser] = useState<any>(null);
 
-  //*১. fetch from Server Cookie
+  //* fetch from Server Cookie
   useEffect(() => {
     const fetchUser = async () => {
       const currentUser = await getCurrentUser();
@@ -34,7 +34,7 @@ export default function Navbar() {
   }, []);
 
   const handleLogout = async () => {
-    await logout(); // Server Action কল করে কুকি ডিলিট করা
+    await logout(); 
     setUser(null);
     toast.success("Logged out successfully");
     router.push("/login");
