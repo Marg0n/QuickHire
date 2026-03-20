@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Button from "../ui/Button";
+import ResponsiveSidebar from "./ResponsiveSidebar";
 
 const Dashboard = () => {
   //* user state
@@ -32,9 +33,13 @@ const Dashboard = () => {
     router.refresh();
   };
   return (
-    <div>
-      dashboard data:
-      <Button onClick={handleLogout}>Logout</Button>
+    <div className="flex">
+      <div>
+        <ResponsiveSidebar />
+      </div>
+      <div>
+        <Button onClick={handleLogout}>Logout</Button>
+      </div>
     </div>
   );
 };
