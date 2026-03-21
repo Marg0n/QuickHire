@@ -33,8 +33,8 @@ const Dashboard = () => {
     router.refresh();
   };
   return (
-    <div className="flex">
-      <div>
+    <div className="flex gap-2 h-screen">
+      <div className="bg-red-500 h-full">
         <ResponsiveSidebar />
       </div>
       <div>

@@ -38,14 +38,14 @@ const ResponsiveSidebar: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>("Projects");
 
   return (
-    <aside className="bg-white shadow-md rounded-md transition-all duration-300 h-screen">
+    <aside className="bg-amber-500 shadow-md rounded-md transition-all duration-300  min-h-full!">
       {/* Header */}
       <div className={`mt-5 ${collapsed ? "px-3" : "px-5"}`}>
         <div className="flex items-center justify-between">
           {!collapsed ? (
             <>
               <Image
-                src="https://i.ibb.co/ZHYQ04D/footer-logo.png"
+                src="https://ibb.co.com/j1xNDp0"
                 alt="logo"
                 width={130}
                 height={130}
