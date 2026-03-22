@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GoHome, GoProjectSymlink, GoSidebarCollapse } from "react-icons/go";
 import { IoIosArrowDown, IoIosSearch } from "react-icons/io";
 import { CiCalendar, CiLogout } from "react-icons/ci";
@@ -9,6 +10,10 @@ import { IoNotificationsOutline, IoSettingsOutline } from "react-icons/io5";
 import { BsThreeDots } from "react-icons/bs";
 import { RiAccountCircleLine } from "react-icons/ri";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { getCurrentUser, logout } from "@/services/AuthService";
+import { toast } from "react-toastify";
+import Button from "../ui/Button";
 
 type MenuItem = {
   label: string;
@@ -34,8 +39,33 @@ const bottomList: MenuItem[] = [
 ];
 
 const ResponsiveSidebar: React.FC = () => {
+  //* states
   const [collapsed, setCollapsed] = useState<boolean>(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>("Projects");
+
+  //* user state
+  const [user, setUser] = useState<any>(null);
+
+  const router = useRouter();
+
+  //* fetch from Server Cookie
+  useEffect(() => {
+    const fetchUser = async () => {
+      const currentUser = await getCurrentUser();
+      setUser(currentUser);
+    };
+    fetchUser();
+  }, []);
+
+  console.log(user);
+
+  const handleLogout = async () => {
+    await logout();
+    setUser(null);
+    toast.success("Logged out successfully");
+    router.push("/login");
+    router.refresh();
+  };
 
   return (
     <aside className="bg-amber-500 shadow-md rounded-md transition-all duration-300  min-h-full!">
@@ -45,7 +75,7 @@ const ResponsiveSidebar: React.FC = () => {
           {!collapsed ? (
             <>
               <Image
-                src="https://ibb.co.com/j1xNDp0"
+                src="https://i.ibb.co.com/0dW7rw4/c38ce4e6-291a-4e25-87b2-93cd1ee23be6-1.png"
                 alt="logo"
                 width={130}
                 height={130}
@@ -57,7 +87,7 @@ const ResponsiveSidebar: React.FC = () => {
             </>
           ) : (
             <Image
-              src="https://i.ibb.co/0BZfPq6/darklogo.png"
+              src="https://i.ibb.co.com/0dW7rw4/c38ce4e6-291a-4e25-87b2-93cd1ee23be6-1.png"
               className="mx-auto cursor-pointer"
               onClick={() => setCollapsed(false)}
               alt="logo"
@@ -148,13 +178,13 @@ const ResponsiveSidebar: React.FC = () => {
       <div className="bg-gray-100 p-4 flex items-center justify-between mt-6 rounded-b-md">
         <div className="flex items-center gap-2">
           <Image
-            src="https://img.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg?t=st=1724478146~exp=1724481746~hmac=7de91a5b9271ecb4309974122ae6f47d71c01f7fff840c69755f781a03d9e340&w=996"
+            src="https://i.ibb.co.com/V3m0BHg/anonymous.png"
             className="w-8 h-8 rounded-full object-cover"
             alt="avatar"
             width={32}
             height={32}
           />
-          {!collapsed && <span className="text-sm">John Deo</span>}
+          {/* {!collapsed && <span className="text-sm">{user.name} || John Deo</span>} */}
         </div>
 
         {!collapsed && (
@@ -165,7 +195,10 @@ const ResponsiveSidebar: React.FC = () => {
                 <RiAccountCircleLine /> Profile
               </li>
               <li className="flex items-center gap-2 text-red-500 hover:bg-gray-100 p-1 rounded cursor-pointer">
-                <CiLogout /> Logout
+                <Button onClick={handleLogout} className="flex gap-2">
+                  <CiLogout />
+                  Logout
+                </Button>
               </li>
             </ul>
           </div>

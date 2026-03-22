@@ -9,36 +9,16 @@ import Button from "../ui/Button";
 import ResponsiveSidebar from "./ResponsiveSidebar";
 
 const Dashboard = () => {
-  //* user state
-  const [user, setUser] = useState<any>(null);
+ 
 
-  const router = useRouter();
-
-  //* fetch from Server Cookie
-  useEffect(() => {
-    const fetchUser = async () => {
-      const currentUser = await getCurrentUser();
-      setUser(currentUser);
-    };
-    fetchUser();
-  }, []);
-
-  console.log(user);
-
-  const handleLogout = async () => {
-    await logout();
-    setUser(null);
-    toast.success("Logged out successfully");
-    router.push("/login");
-    router.refresh();
-  };
+  
   return (
     <div className="flex gap-2 h-screen">
       <div className="bg-red-500 h-full">
         <ResponsiveSidebar />
       </div>
       <div>
-        <Button onClick={handleLogout}>Logout</Button>
+        something
       </div>
     </div>
   );
