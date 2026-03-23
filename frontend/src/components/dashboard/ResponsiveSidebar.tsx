@@ -156,7 +156,7 @@ const ResponsiveSidebar: React.FC = () => {
           );
         })}
       </div>
-
+      
       {/* Bottom Section */}
       <div className={`mt-6 border-t ${collapsed ? "px-3" : "px-5"}`}>
         {bottomList.map((item) => (
@@ -173,6 +173,11 @@ const ResponsiveSidebar: React.FC = () => {
           </div>
         ))}
       </div>
+      
+      <Button onClick={handleLogout} className="flex gap-2">
+        <CiLogout />
+        Logout
+      </Button>
 
       {/* Profile */}
       <div className="bg-gray-100 p-4 flex items-center justify-between mt-6 rounded-b-md">
@@ -184,7 +189,11 @@ const ResponsiveSidebar: React.FC = () => {
             width={32}
             height={32}
           />
-          {/* {!collapsed && <span className="text-sm">{user.name} || John Deo</span>} */}
+          {!collapsed && (
+            <span className="text-sm">
+              {user?.userData?.name || "John Deo"}
+            </span>
+          )}
         </div>
 
         {!collapsed && (

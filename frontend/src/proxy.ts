@@ -7,7 +7,7 @@ const authRoutes = ["/login", "/register"];
 
 //? role based Regex
 const roleBasedPrivateRoutes = {
-  customer: [/^\/dashboard\/customer/],
+  user: [/^\/dashboard\/user/],
   admin: [/^\/dashboard\/admin/],
 };
 
